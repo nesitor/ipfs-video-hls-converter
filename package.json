@@ -1,0 +1,21 @@
+{
+  "name": "ipfs-video",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "video.js",
+  "scripts": {
+    "start": "node video.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "aleph-sdk-ts": "^3.3.0",
+    "dotenv": "^16.0.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "ipfs-core": "^0.18.0",
+    "ipfs-http-client": "^60.0.0"
+  }
+}

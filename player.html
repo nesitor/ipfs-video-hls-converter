@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>
+      IPFS Video Player
+    </title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.5.14/hls.min.js"></script>
+
+    <script>
+      function onChange() {
+        var URL = document.getElementById('video-url').value
+        Hls.DefaultConfig.debug = true;
+        if (Hls.isSupported()) {
+          const video = document.getElementById('video');
+          const hls = new Hls();
+          hls.loadSource(URL);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            video.play();
+          });
+        }
+      }
+    </script>
+
+    <input type="text" id="video-url" value="https://ipfs.io/ipfs/QmdJfweK1Y78FutaedErXD5BxG3NvXy5rgV9fkzSXKas5Z" size="100">
+    <button onclick="onChange()">Load Video</button>
+    <br><br>
+    <video id="video" controls></video>
+
+  </body>
+</html>
