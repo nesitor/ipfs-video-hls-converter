@@ -34,7 +34,7 @@ async function run() {
     console.log('File: ', file)
 
     ffmpeg(file)
-        .addOutputOption("-c:v", "copy", "-bsf:v", "h264_mp4toannexb", "-c:a", "aac", "-strict", "experimental", "-start_number", "0", "-hls_time", "1", "-hls_list_size", "6")
+        .addOutputOption("-c:v", "copy", "-bsf:v", "h264_mp4toannexb", "-c:a", "aac", "-strict", "experimental", "-start_number", "0", "-hls_time", "1", "-hls_list_size", "0")
         .output(outputPath + 'v%v/master.m3u8')
         .on('end', async function() {
             const outputVideo = 'v0'
